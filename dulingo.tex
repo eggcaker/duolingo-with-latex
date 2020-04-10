@@ -1,13 +1,12 @@
-\documentclass[12pt,oneside,fontset=mac]{ctexbook}
-\usepackage[a4paper,left=1.5cm,right=1.5cm, bottom=1.5cm,top=2.5cm]{geometry}
+\documentclass[12pt,oneside]{ctexbook}
 
+\usepackage[a4paper,left=1.5cm,right=1.5cm, bottom=1.5cm,top=2.5cm]{geometry}
+\usepackage{booktabs}
 \usepackage{fontspec}
 \usepackage{xeCJK}
 
 \setCJKmainfont[Scale=0.95]{PingFangSC-Light}
 \newfontfamily{\yinbiao}[Scale=1.0]{HelveticaNeue-Light}
-
-
 
 \usepackage{pxrubrica}
 \usepackage{xcolor}
@@ -22,58 +21,16 @@
 \usepackage{tikz}
 \usepackage{accanthis}
 \usepackage{palatino}
-
-\usepackage{titlesec}
-
-
 \usepackage{microtype}
 \usepackage{sectsty}
-\usepackage[palette=munch]{./assets/niyu}
-\usepackage{./assets/card}
+\usepackage[palette=munch]{assets/niyu}
+\usepackage{color,colortbl}
 
-\newCJKfontfamily\zhkb[Scale=1.1]{STKaitiTC-Bold}
-\newCJKfontfamily\zhli{LiSu}
-
-
-\NewDocumentCommand \lishu   { } { \CJKfamily {zhli} }
-\NewDocumentCommand \kaishub  { } { \CJKfamily {zhkb} }
-
-
-\definecolor{green}{HTML}{4A9B80}
-\definecolor{red}{HTML}{f44336}
-\definecolor{blue}{HTML}{2196F3}
-\definecolor{dialogue}{HTML}{7C0680}
-
-
-\chapterfont{\lishu\bfseries}
-\sectionfont{\lishu\centering}
-\subsectionfont{\kaishub}
-
+\usepackage[first=0,last=9]{lcg}
+\newcommand{\ra}{\rand0.\arabic{rand}}
 
 
 \begin{document}
-
-
-\chapter{{\zhli{小李赴日}}}
-\section{李さんは中国人です}
-\subsection{基本课文}
-
-\kewen{
-  \item \jruby{李}{り}さん\textcolor{blue}{ は }\ruby{中}{ちゅう}\ruby{国}{ごく}\ruby{人}{じん}\textcolor{blue}{です}。
-  \item 森さん\textcolor{blue}{は } \ruby[m]{学生}{がく|せい}\textcolor{blue}{ではありません}。　
-  \item \ruby[()]{林}{はやし}さんは \ruby[m]{日本人}{に|ほん|じん}\textcolor{blue}{ですか}?
-  \item \ruby{李}{り}さんは{ }  JC\ruby{企}{き}\ruby{画}{かく}\textcolor{blue}{の}\ruby{社}{しゃ}\ruby{員}{いん}です。
-}
-
-\dia{对话A}
-{わたしは李です。\ruby[m]{小野}{お|の}さんですか？}
-{はい、そうです。小野です。}
-
-\dia{对话B}
-{森さんは学生ですか }
-{いいえ学生ではありません。会社員です。}
-
-
-
-
+\include{lesson1}
+\include{lesson3}
 \end{document}

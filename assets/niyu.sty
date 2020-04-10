@@ -638,7 +638,37 @@
       \setlength\itemsep{0.06em}
    #1
   \end{itemize}
+  \bigskip
 }
+
+\newcommand{\jc}[2]{
+  \translate{日->中}{#1}{#2}{日}{中}
+}
+
+\newcommand{\cj}[2]{
+  \translate{中->日}{#1}{#2}{中}{日}
+}
+
+\newcommand{\translate}[5]{
+   \tikzstyle{mybox} = [draw=white, fill=white, ultra thick,
+   rectangle, rounded corners, inner sep=16pt, inner ysep=16pt]
+   \tikzstyle{fancytitle} =[fill=\ch@p, rounded corners, text=white]
+   \bigskip
+   \begin{tikzpicture}
+     \node [mybox] (box){
+       \begin{minipage}{0.66\textwidth}
+         \begin{dialogue}
+           \speak{#4} #2
+           \speak{#5} #3
+         \end{dialogue}
+       \end{minipage}
+     };
+
+     \node[fancytitle,right=16pt] (title) at (box.north west) {\kaishu{#1}};
+     \draw [ rounded corners,line width=2.8pt,draw=\ch@p](title)--([xshift=0.1cm]box.north west)
+     --([xshift=0.1cm,yshift=0.2cm]box.south west)--++(0:0.5cm);
+   \end{tikzpicture}
+ }
 
 
 \newcommand{\dia}[3]{
@@ -670,9 +700,54 @@
 \setlength{\XeTeXLinkMargin}{-1pt}
 
 \renewcommand \thesection {第 \arabic{section} 课}
-\renewcommand \thesubsection {\arabic{subsection}}
+\renewcommand \thesubsection {\bigskip\bigskip\arabic{subsection}\bigskip\bigskip}
 \renewcommand \thesubsubsection {\thesubsection\arabic{subsubsection}}
 
 \setlength{\emergencystretch}{10pt}
 
 % \hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{1.145\reclength}}}}
+\newCJKfontfamily\zhkb[Scale=1.1]{STKaitiTC-Bold}
+\newCJKfontfamily\zhli{LiSu}
+
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {16pt}% <beforeskip>
+  {16pt}% <afterskip>
+{\normalfont\large\bfseries\SS@subsectfont}}
+\makeatother
+
+\NewDocumentCommand\lishu{}{\CJKfamily{zhli}}
+\NewDocumentCommand\kaishub{}{\CJKfamily{zhkb}}
+
+
+\definecolor{green}{HTML}{4A9B80}
+\definecolor{red}{HTML}{f44336}
+\definecolor{blue}{HTML}{2196F3}
+\definecolor{dialogue}{HTML}{7C0680}
+\definecolor{gray}{HTML}{dddddd}
+
+\chapterfont{\lishu\bfseries}
+\sectionfont{\lishu\centering}
+\subsectionfont{\kaishub}
+
+\newcommand{\word}[2]{
+  \begin{tcolorbox}[
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!30,
+    colframe=white,
+    nobeforeafter,
+    baseline=3.5mm,
+    width=0.49\linewidth,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    fontupper=\color{red},
+    arc=0pt,outer arc=0pt
+    ]
+    {\parbox{0.62\linewidth}{#1}}　{\parbox{0.30\linewidth}{\color{blue}#2}}
+  \end{tcolorbox}
+}

@@ -4,3 +4,6 @@
 *.xdv
 *.fdb_latexmk
 *.fls
+*.pdf
+.auctex-auto
+/.lesson3.tex.swp
