@@ -7,3 +7,4 @@
 *.pdf
 .auctex-auto
 /.lesson3.tex.swp
+/*.gz

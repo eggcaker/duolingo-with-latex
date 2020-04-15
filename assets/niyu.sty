@@ -656,7 +656,7 @@
    \bigskip
    \begin{tikzpicture}
      \node [mybox] (box){
-       \begin{minipage}{0.66\textwidth}
+       \begin{minipage}{0.60\textwidth}
          \begin{dialogue}
            \speak{#4} #2
            \speak{#5} #3
@@ -714,6 +714,13 @@
   {16pt}% <beforeskip>
   {16pt}% <afterskip>
 {\normalfont\large\bfseries\SS@subsectfont}}
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection{section}{2}{\z@}%
+  {16pt}% <beforeskip>
+  {16pt}% <afterskip>
+{\normalfont\large\bfseries\SS@sectfont}}
 \makeatother
 
 \NewDocumentCommand\lishu{}{\CJKfamily{zhli}}
