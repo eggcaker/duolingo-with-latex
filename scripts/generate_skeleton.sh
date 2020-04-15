@@ -10,6 +10,22 @@ chapters = [
 ]
 
 
-for idx,ele in enumerate(chapters):
+for idx,chap in enumerate(chapters):
     idx = idx + 1
-    print(idx, ele)
+    print('\\chapter{多邻国 ' + str(idx) +'}')
+    for idx2, sec in enumerate(chap):
+        idx2 = idx2 + 1
+        name='chapter' + str(idx) + '_lesson' +str(idx2)
+        print('\\include{'+name + '}')
+        touch @(name).tex
+        echo @('\section{' + sec + "}") >> @(name).tex
+        echo "" >> @(name).tex
+        echo '\\subsection{听力句子}' >> @(name).tex
+        echo '\\kewen{' >> @(name).tex
+        echo '  \\item[] hello here' >> @(name).tex
+        echo '}' >> @(name).tex
+
+        echo '\\subsection{日中互译}' >> @(name).tex
+        echo '\\jc{おとといはぜんぜん\ruby{歌い}{うた|い}ませんでした。}{前天完全没有唱歌。}' >> @(name).tex
+        echo '\\subsection{生詞表}' >> @(name).tex
+        echo '\\word{走り[はしり]}{[动]跑步}' >> @(name).tex
