@@ -3,7 +3,7 @@ LATEXMK = latexmk
 RM = rm -f
 
 # Project-specific settings
-DOCNAME = dulingo
+DOCNAME = duolingo
 
 # Targets
 all: doc
