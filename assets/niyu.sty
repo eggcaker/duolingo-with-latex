@@ -629,16 +629,15 @@
   \end{tcolorbox}
 }
 
+\tcolorboxenvironment{itemize}{blanker,
+  before skip=16pt,after skip=26pt,
+  borderline west={3mm}{0pt}{\ch@p}}
+
 \newcommand{\kewen}[1]{
-  \bigskip
-  \tcolorboxenvironment{itemize}{blanker,
-    before skip=16pt,after skip=16pt,
-    borderline west={3mm}{0pt}{\ch@p}}
   \begin{itemize}
       \setlength\itemsep{0.06em}
    #1
   \end{itemize}
-  \bigskip
 }
 
 \newcommand{\jc}[2]{

@@ -18,6 +18,7 @@ for idx,chap in enumerate(chapters):
         name='chapter' + str(idx) + '_lesson' +str(idx2)
         print('\\include{'+name + '}')
         touch @(name).tex
+        echo > @(name).tex
         echo @('\section{' + sec + "}") >> @(name).tex
         echo "" >> @(name).tex
         echo '\\subsection{听力句子}' >> @(name).tex
@@ -26,6 +27,6 @@ for idx,chap in enumerate(chapters):
         echo '}' >> @(name).tex
 
         echo '\\subsection{日中互译}' >> @(name).tex
-        echo '\\jc{おとといはぜんぜん\ruby{歌い}{うた|い}ませんでした。}{前天完全没有唱歌。}' >> @(name).tex
+        echo '\\jc{おとといはぜんぜん\\ruby{歌い}{うた|い}ませんでした。}{前天完全没有唱歌。}' >> @(name).tex
         echo '\\subsection{生詞表}' >> @(name).tex
         echo '\\word{走り[はしり]}{[动]跑步}' >> @(name).tex

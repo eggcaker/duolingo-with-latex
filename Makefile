@@ -22,6 +22,7 @@ clean: mostlyclean
 	$(LATEXMK) -silent -C
 	$(RM) *.run.xml *.synctex.gz
 	$(RM) *.d
+	$(RM) *.out
 	$(RM) *.log
 
 .PHONY: all clean doc mostlyclean pdf
