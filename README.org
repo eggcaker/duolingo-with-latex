@@ -1,11 +1,8 @@
 #+STARTUP: latexpreview
 
-
-* [[https://www.duolingo.com][Duolingo]] notebooks with $\LaTeX$
+* [[https://www.duolingo.com][Duolingo]] notebooks with LaTeX
 
 最近闲来无事开始学习日语，用的是多邻国的 app, 学了几天后偶然的机会，接触到了
-$\LaTex$, 然后准备用 $\LaTeX$ 写写笔记然后顺便玩玩 $\LaTeX$ , 也就有了这个项目。
+LaTex, 然后准备用来写写笔记然后顺便玩玩LaTeX , 也就有了这个项目。
 
-项目文件里定制了一些样式，也可以对 $\LaTeX$ 感兴趣的朋友来玩玩[[https://emacs.cc/use_latex_to_write_word_card/][别的小东西]]。
-
-
+项目文件里定制了一些样式，也可以对LaTeX感兴趣的朋友来玩玩[[https://emacs.cc/use_latex_to_write_word_card/][别的小东西]]。
