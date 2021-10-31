@@ -25,7 +25,10 @@ clean: mostlyclean
 	$(RM) *.out
 	$(RM) *.log
 
-.PHONY: all clean doc mostlyclean pdf
+open:
+	start duolingo.pdf
 
+
+.PHONY: all clean doc mostlyclean pdf open
 # Include auto-generated dependencies
 -include *.d

@@ -9,3 +9,5 @@
 /.lesson3.tex.swp
 /*.gz
 *.synctex(busy)
+/duolingo.d
+/nul
